@@ -19,6 +19,24 @@ package main
 //	return listNodeValues
 //}
 //
+
+//// 输入一个slice创建一个链表
+//func SetListNodeBySlice(arr []int) *ListNode {
+//	ret := &ListNode{
+//		Value: 0,
+//		Next:  nil,
+//	}
+//	cur := ret
+//	for _, val := range arr {
+//		cur.Next = &ListNode{
+//			Value: val,
+//			Next:  nil,
+//		}
+//		cur = cur.Next
+//	}
+//	return ret.Next
+//}
+
 //// 链表长度
 //func GetListNodeLen(head *ListNode) int {
 //	cur := head
