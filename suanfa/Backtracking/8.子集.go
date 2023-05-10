@@ -15,9 +15,9 @@ func subsets(nums []int) [][]int {
 }
 
 func subsetsBack(res *[][]int, path []int, nums []int, start int) {
-	if start > len(nums) {
-		return
-	}
+	//if start > len(nums) {
+	//	return
+	//}
 	temp := make([]int, len(path))
 	copy(temp, path)
 	*res = append(*res, temp)
