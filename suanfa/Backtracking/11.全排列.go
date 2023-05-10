@@ -12,6 +12,7 @@ func permute(nums []int) [][]int {
 	return res
 
 }
+
 func permuteBack(res *[][]int, path, nums []int, numsLen int, used map[int]bool) {
 	if len(path) == numsLen {
 		temp := make([]int, numsLen)
@@ -20,13 +21,13 @@ func permuteBack(res *[][]int, path, nums []int, numsLen int, used map[int]bool)
 		return
 	}
 	for i := 0; i < numsLen; i++ {
-		if used[nums[i]] {
+		if used[i] {
 			continue
 		}
 		path = append(path, nums[i])
-		used[nums[i]] = true
+		used[i] = true
 		permuteBack(res, path, nums, numsLen, used)
-		used[nums[i]] = false
+		used[i] = false
 		path = path[:len(path)-1]
 	}
 
