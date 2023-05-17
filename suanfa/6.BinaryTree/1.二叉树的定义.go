@@ -15,8 +15,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// 层序遍历
-
 // 反转二叉树
 // 对称二叉树
 // 二叉树的最大深度
@@ -31,20 +29,16 @@ type TreeNode struct {
 // 最大二叉树
 func main() {
 	root := &TreeNode{
-		Val:  1,
-		Left: nil,
+		Val:  3,
+		Left: &TreeNode{Val: 9},
 		Right: &TreeNode{
-			Val: 2,
+			Val: 20,
 			Left: &TreeNode{
-				Val:   3,
-				Left:  nil,
-				Right: nil,
+				Val: 15,
 			},
-			Right: nil,
+			Right: &TreeNode{Val: 7},
 		},
 	}
 
-	fmt.Println(preorderTraversal(root))
-	fmt.Println(inorderTraversal(root))
-	fmt.Println(postorderTraversal(root))
+	fmt.Println(levelOrder(root))
 }
