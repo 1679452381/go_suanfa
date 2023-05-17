@@ -15,7 +15,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// 反转二叉树
+// 2.
 // 对称二叉树
 // 二叉树的最大深度
 // 二叉树的最小深度
