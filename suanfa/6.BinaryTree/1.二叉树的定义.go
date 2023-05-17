@@ -5,16 +5,16 @@
  **/
 package main
 
+import (
+	"fmt"
+)
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
 	Right *TreeNode
 }
 
-// 二叉树的迭代遍历
-// 1.前序遍历
-// 2.中序遍历
-// 3.后续遍历
 // 层序遍历
 
 // 反转二叉树
@@ -30,5 +30,21 @@ type TreeNode struct {
 // 利用中序和后序遍历构建二叉树
 // 最大二叉树
 func main() {
+	root := &TreeNode{
+		Val:  1,
+		Left: nil,
+		Right: &TreeNode{
+			Val: 2,
+			Left: &TreeNode{
+				Val:   3,
+				Left:  nil,
+				Right: nil,
+			},
+			Right: nil,
+		},
+	}
 
+	fmt.Println(preorderTraversal(root))
+	fmt.Println(inorderTraversal(root))
+	fmt.Println(postorderTraversal(root))
 }
