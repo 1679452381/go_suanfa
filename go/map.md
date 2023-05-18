@@ -37,3 +37,4 @@ type bmap struct {
 
 }
 ```
+![](./imgs/map.jpg)
