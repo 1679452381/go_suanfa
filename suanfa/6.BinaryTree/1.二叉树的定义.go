@@ -41,4 +41,5 @@ func main() {
 	}
 
 	fmt.Println(levelOrder(root))
+	fmt.Println(levelOrder2(root))
 }
