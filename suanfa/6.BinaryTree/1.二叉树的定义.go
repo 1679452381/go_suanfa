@@ -7,6 +7,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 type TreeNode struct {
@@ -27,18 +28,6 @@ type TreeNode struct {
 // 利用中序和后序遍历构建二叉树
 // 最大二叉树
 func main() {
-	root := &TreeNode{
-		Val:  3,
-		Left: &TreeNode{Val: 9},
-		Right: &TreeNode{
-			Val: 20,
-			Left: &TreeNode{
-				Val: 15,
-			},
-			Right: &TreeNode{Val: 7},
-		},
-	}
-
-	fmt.Println(levelOrder(root))
-	fmt.Println(levelOrder2(root))
+	fmt.Println(2 << 2)
+	fmt.Println(int(math.Pow(2, 3)))
 }
