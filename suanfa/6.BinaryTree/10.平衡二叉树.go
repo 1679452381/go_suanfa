@@ -23,6 +23,7 @@ func getH(root *TreeNode) int {
 	}
 	return r + 1
 }
+
 func main() {
 
 }
