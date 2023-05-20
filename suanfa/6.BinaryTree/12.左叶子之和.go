@@ -1,9 +1,10 @@
 package main
 
-import "fmt"
-
 func sumOfLeftLeaves(root *TreeNode) int {
-	leftNodes := make([]int, 0)
+	if root.Left == nil && root.Right == nil {
+		return root.Val
+	}
+	sum := 0
 	q := make([]*TreeNode, 0)
 	q = append(q, root)
 	for len(q) > 0 {
@@ -12,17 +13,12 @@ func sumOfLeftLeaves(root *TreeNode) int {
 		if cur.Left != nil {
 			q = append(q, cur.Left)
 			if cur.Left.Left == nil && cur.Left.Right == nil {
-				leftNodes = append(leftNodes, cur.Left.Val)
+				sum += cur.Left.Val
 			}
 		}
 		if cur.Right != nil {
 			q = append(q, cur.Right)
 		}
-	}
-	fmt.Println(leftNodes)
-	sum := 0
-	for _, node := range leftNodes {
-		sum += node
 	}
 	return sum
 }
