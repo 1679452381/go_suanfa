@@ -47,13 +47,13 @@ func max(a, b int) int {
 	return b
 }
 
-//func main() {
-//	wight := []int{1, 3, 4}
-//	value := []int{15, 20, 30}
-//	bagSize := 4
-//	maxValue := bagProblem(wight, value, bagSize)
-//	fmt.Println(maxValue)
-//	maxValue2 := bagProblemOptimized(wight, value, bagSize)
-//	fmt.Println(maxValue2)
-//
-//}
+func main() {
+	wight := []int{1, 3, 4}
+	value := []int{15, 20, 30}
+	bagSize := 4
+	maxValue := bagProblem(wight, value, bagSize)
+	fmt.Println(maxValue)
+	maxValue2 := bagProblemOptimized(wight, value, bagSize)
+	fmt.Println(maxValue2)
+
+}
