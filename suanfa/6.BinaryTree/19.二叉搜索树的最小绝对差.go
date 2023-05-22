@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -26,20 +25,4 @@ func getMinimumDifference(root *TreeNode) int {
 		cur = cur.Right
 	}
 	return min
-}
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func main() {
-	root := &TreeNode{Val: 1,
-		Right: &TreeNode{
-			Val:   3,
-			Left:  &TreeNode{Val: 2},
-			Right: nil,
-		}}
-	fmt.Println(getMinimumDifference(root))
 }
