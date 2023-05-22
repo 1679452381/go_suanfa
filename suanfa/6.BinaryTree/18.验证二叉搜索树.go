@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 使用中序遍历判断是否为二叉搜索树
 
 func isValidBST(root *TreeNode) bool {
@@ -22,15 +20,4 @@ func isValidBST(root *TreeNode) bool {
 		cur = cur.Right
 	}
 	return true
-}
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func main() {
-	root := &TreeNode{Val: 0}
-	fmt.Println(isValidBST(root))
 }
