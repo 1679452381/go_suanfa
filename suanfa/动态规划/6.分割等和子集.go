@@ -15,9 +15,10 @@ func canPartition(nums []int) bool {
 	target := sum / 2
 
 	dp := make([]int, target+1)
-	for i := nums[0]; i < target; i++ {
+	for i := nums[0]; i <= target; i++ {
 		dp[i] = nums[0]
 	}
+	fmt.Println(dp)
 	for i := 0; i < len(nums); i++ {
 		for j := target; j >= nums[i]; j-- {
 			if dp[j] < dp[j-nums[i]]+nums[i] {

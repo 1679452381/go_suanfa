@@ -28,12 +28,17 @@ func bagProblem(wight, value []int, bagSize int) int {
 // 滚动数据 （一维数组）
 func bagProblemOptimized(wight, value []int, bagSize int) int {
 	dp := make([]int, bagSize+1)
-	for j := wight[0]; j <= bagSize; j++ {
-		dp[j] = value[0]
+	//舒适化
+	for i := wight[0]; i <= bagSize; i++ {
+		dp[i] = value[0]
 	}
-	fmt.Println("dp初始化：", dp)
+	fmt.Println(dp)
 	for i := 0; i < len(wight); i++ {
 		for j := bagSize; j > wight[i]; j-- {
+			//fmt.Println(i, wight[i])
+			//fmt.Println("j", j)
+			//fmt.Println(dp, j, dp[j])
+			//fmt.Println("2", dp, j-wight[i], dp[j-wight[i]])
 			dp[j] = max(dp[j], dp[j-wight[i]]+value[i])
 		}
 	}
@@ -51,8 +56,8 @@ func main() {
 	wight := []int{1, 3, 4}
 	value := []int{15, 20, 30}
 	bagSize := 4
-	maxValue := bagProblem(wight, value, bagSize)
-	fmt.Println(maxValue)
+	//maxValue := bagProblem(wight, value, bagSize)
+	//fmt.Println(maxValue)
 	maxValue2 := bagProblemOptimized(wight, value, bagSize)
 	fmt.Println(maxValue2)
 

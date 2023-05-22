@@ -15,7 +15,7 @@ func findTargetSumWays(nums []int, target int) int {
 	for _, num := range nums {
 		sum += num
 	}
-	if int(math.Abs(float64(sum))) < target {
+	if int(math.Abs(float64(target))) > sum {
 		return 0
 	}
 	c := sum + target
