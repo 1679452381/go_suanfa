@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func findMode(root *TreeNode) []int {
 	s := make([]*TreeNode, 0)
 	res := make([]int, 0)
@@ -38,20 +36,20 @@ func findMode(root *TreeNode) []int {
 	return res
 }
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func main() {
-	root := &TreeNode{Val: 1,
-		Right: &TreeNode{
-			Val:   2,
-			Left:  &TreeNode{Val: 2},
-			Right: nil,
-		}}
-	root2 := &TreeNode{Val: 0}
-	fmt.Println(findMode(root))
-	fmt.Println(findMode(root2))
-}
+//type TreeNode struct {
+//	Val   int
+//	Left  *TreeNode
+//	Right *TreeNode
+//}
+//
+//func main() {
+//	root := &TreeNode{Val: 1,
+//		Right: &TreeNode{
+//			Val:   2,
+//			Left:  &TreeNode{Val: 2},
+//			Right: nil,
+//		}}
+//	root2 := &TreeNode{Val: 0}
+//	fmt.Println(findMode(root))
+//	fmt.Println(findMode(root2))
+//}
