@@ -10,7 +10,8 @@ import (
 	"sort"
 )
 
-func threeSum(nums []int) [][]int {
+// 回溯 会超时
+func threeSum1(nums []int) [][]int {
 	sort.Ints(nums)
 	path := make([]int, 0, 3)
 	res := make([][]int, 0)
@@ -44,8 +45,44 @@ func threeSumBack(nums, path, used []int, res *[][]int, sum, start int) {
 	}
 }
 
-func main() {
-	nums := []int{0, 0, 0}
+// 双指针
+func threeSum(nums []int) [][]int {
+	res := make([][]int, 0)
+	sort.Ints(nums)
+	for i := 0; i < len(nums); i++ {
+		if nums[i] > 0 {
+			return res
+		}
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		left := i + 1
+		right := len(nums) - 1
+		for left < right {
+			sum := nums[i] + nums[left] + nums[right]
+			if sum == 0 {
+				res = append(res, []int{nums[i], nums[left], nums[right]})
+				for left < right && nums[left] == nums[left+1] {
+					left++
+				}
+				for left < right && nums[right] == nums[right-1] {
+					right--
+				}
+				left++
+				right--
+			} else if sum > 0 {
+				right--
+			} else {
+				left++
+			}
+		}
+	}
+	return res
+}
 
+func main() {
+	nums := []int{1, 2, 3, 4, 0, -1, -3, -2, -2}
+
+	fmt.Println(threeSum1(nums))
 	fmt.Println(threeSum(nums))
 }
