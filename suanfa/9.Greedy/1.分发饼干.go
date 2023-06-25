@@ -17,7 +17,7 @@ func findContentChildren(g []int, s []int) int {
 			count++
 			lenS--
 		}
-		g = g[:lenG]
+		//g = g[:lenG]
 		lenG--
 	}
 	return count

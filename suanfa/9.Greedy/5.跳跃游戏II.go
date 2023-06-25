@@ -43,6 +43,7 @@ func jump2(nums []int) int {
 	}
 	return step
 }
+
 func main() {
 	nums := []int{7, 0, 9, 6, 9, 6, 1, 7, 9, 0, 1, 2, 9, 0, 3}
 	fmt.Println(jump(nums))
